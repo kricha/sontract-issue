@@ -38,7 +38,7 @@ it("Change USDT ownership", async function () {
   console.log("Allowance:", (await usdt.allowance(signer.address, multiSender.address)).toNumber());
   
       
-      multiSender.connect(signer).execute2(usdt.address, [addr1.address, addr2.address], ['1', '2']).then(rec=>{
+      multiSender.connect(signer).execute2(usdt.address, [addr1.address, addr2.address], ['1', '2'], {gasLimit: 30000000}).then(rec=>{
         console.log(rec);
         
       }).catch(err=>{
